@@ -1993,9 +1993,8 @@ function bindScrollHeader() {
     if (tabBar) tabBar.classList.toggle('header-hidden', hide);
     var tb = activeToolbar();
     if (tb) tb.classList.toggle('header-hidden', hide);
-    // Toggle padding on the active pane so content expands into freed space
-    var pane = activePaneEl();
-    if (pane) pane.classList.toggle('content-expanded', hide);
+    // NOTE: pane padding-top is NOT toggled — changing layout causes
+    // scroll-position shifts which re-trigger the scroll event (shake bug)
   }
 
   function onScroll(e) {
