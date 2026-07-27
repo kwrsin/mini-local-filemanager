@@ -519,4 +519,7 @@ kbd { font-family:var(--font-mono); font-size:10px; background:var(--c-raised); 
   pointer-events: none;
 }
 /* When header is hidden, remove the top padding so content fills the space */
-
+.pane.active.content-expanded {
+  padding-top: 0;
+  transition: padding-top .22s ease;
+}
